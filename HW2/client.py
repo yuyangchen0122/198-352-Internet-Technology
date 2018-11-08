@@ -22,7 +22,7 @@ def connect_to_ts():
     except mysoc.error as err:
         print('{} \n'.format("socket open error ", err))
 
-    port_ts = 50113
+    port_ts = 50112
     sa_sameas_myaddr = mysoc.gethostbyname("grep.cs.rutgers.edu")
     server_binding1 = (sa_sameas_myaddr, port_ts)
     ts.connect(server_binding1)

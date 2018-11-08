@@ -14,7 +14,7 @@ def server():
         print("[S]: Server socket created")
     except mysoc.error as err:
         print('{} \n'.format("socket open error ", err))
-    server_binding = ('', 50012)
+    server_binding = ('', 50112)
     tssd.bind(server_binding)
     tssd.listen(1)
     host = mysoc.gethostname()
