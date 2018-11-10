@@ -3,7 +3,6 @@
 
 import threading
 import time
-import random
 import socket as mysoc
 
 
@@ -11,11 +10,6 @@ class count:
     counter = 0
     ctoTLDS1 = None
     ctoTLDS2 = None
-
-
-def reverse(a_string):
-    t = a_string.rstrip()
-    return t[::-1] + "\n"
 
 
 def connect_to_tlds1():
@@ -54,7 +48,7 @@ def server():
         print("[S]: Server socket created")
     except mysoc.error as err:
         print('{} \n'.format("socket open error ", err))
-    server_binding = ('', 50021)
+    server_binding = ('', 5002)
     ss.bind(server_binding)
     ss.listen(1)
     host = mysoc.gethostname()
@@ -63,15 +57,17 @@ def server():
     print("[S]: Server IP address is  ", localhost_ip)
     csockid, addr = ss.accept()
     print("[S]: Got a connection request from a client at", addr)
-    tssd1, addr1 = ss.accept()
-    print("[S]: Got a connection request from a TLDS1 at", addr1)
-    tssd2, addr2 = ss.accept()
-    print("[S]: Got a connection request from a TLDS2 at", addr2)
+    # tssd1, addr1 = ss.accept()
+    # print("[S]: Got a connection request from a TLDS1 at", addr1)
+    # tssd2, addr2 = ss.accept()
+    # print("[S]: Got a connection request from a TLDS2 at", addr2)
+
+    with open('PROJ2-DNSRS.txt') as f:
+        lines = f.readlines()
+    f.close()
 
     while 1:
-        with open('PROJ2-DNSRS.txt') as f:
-            lines = f.readlines()
-        f.close()
+
         data_from_client = csockid.recv(1024)
         m = data_from_client.decode('utf-8')
         if not data_from_client:
@@ -86,6 +82,8 @@ def server():
                 time.sleep(1)
                 temp = 1
                 break
+            if not line.startswith(m) | m.endswith(".edu") | m.endswith(".com"):
+                csockid.send("ERROR".encode('utf-8'))
 
         if temp == 0:
             if m.endswith(".edu"):
@@ -98,24 +96,22 @@ def server():
                 temp2 = line.strip("\n") + "\n"
                 csockid.send(temp2.encode('utf-8'))
                 time.sleep(1)
-            else:
-                csockid.send("Error".encode('ufg-8'))
 
-        data_from_server1 = tssd1.recv(1024)
-        s1 = data_from_server1.decode('uft-8')
-        if not data_from_server1:
-            break
-        print("[C]: Data received from TLDS1:", s1)
-        csockid.send(s1.encode('utf-8'))
-        time.sleep(1)
-
-        data_from_server2 = tssd2.recv(1024)
-        s2 = data_from_server2.decode('uft-8')
-        if not data_from_server2:
-            break
-        print("[C]: Data received from TLDS2:", s2)
-        csockid.send(s2.encode('utf-8'))
-        time.sleep(1)
+        # data_from_server1 = tssd1.recv(100)
+        # s1 = data_from_server1.decode('uft-8')
+        # if not data_from_server1:
+        #     break
+        # print("[C]: Data received from TLDS1:", s1)
+        # csockid.send(s1.encode('utf-8'))
+        # time.sleep(1)
+        #
+        # data_from_server2 = tssd2.recv(100)
+        # s2 = data_from_server2.decode('uft-8')
+        # if not data_from_server2:
+        #     break
+        # print("[C]: Data received from TLDS2:", s2)
+        # csockid.send(s2.encode('utf-8'))
+        # time.sleep(1)
 
     # Close the server socket
     ss.close()

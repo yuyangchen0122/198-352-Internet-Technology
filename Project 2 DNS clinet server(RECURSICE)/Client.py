@@ -21,7 +21,7 @@ def client():
         print('{} \n'.format("socket open error ", err))
 
     # Define the port on which you want to connect to the server
-    port = 50020
+    port = 5002
     sa_sameas_myaddr = mysoc.gethostbyname(mysoc.gethostname())
     # connect to the server on local machine
 
@@ -31,7 +31,7 @@ def client():
 
     # send a intro  message to the client.
 
-    with open('/Users/yuyangchen0122/Desktop/Rutger-352-Internet-Technology/Project\ 2\ DNS\ clinet\ server\(RECURSICE\)/\ PROJ2-HNS.txt') as f:
+    with open("PROJ2-HNS.txt", 'r') as f:
         lines = f.readlines()
     f.close()
 
@@ -45,11 +45,12 @@ def client():
 
         cs.send(line.strip("\n").encode('utf-8'))
         time.sleep(1.5)
+        print("send")
 
-        data_from_server = cs.recv(1024)
+        data_from_server = cs.recv(100)
         d = data_from_server.decode('utf-8')
         time.sleep(1)
-        print("[C]: Data received back from RS server and they were matched in the RS Table:", d)
+        print("[C]: Data received back from RS server: ", d)
         f.write(d)
 
     f.close()
