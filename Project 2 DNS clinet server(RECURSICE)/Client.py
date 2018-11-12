@@ -28,7 +28,8 @@ def client():
 
     # Define the port on which you want to connect to the server
     port = 5004
-    sa_sameas_myaddr = mysoc.gethostbyname(mysoc.gethostname())
+    host = mysoc.gethostbyname(inputhostname)
+    sa_sameas_myaddr = mysoc.gethostbyname(host)
     # connect to the server on local machine
 
     server_binding = (sa_sameas_myaddr, port)
@@ -37,7 +38,7 @@ def client():
 
     # send a intro  message to the client.
 
-    with open("PROJ2-HNS.txt", 'r') as f:
+    with open(inputtextname, 'r') as f:
         lines = f.readlines()
     f.close()
 
