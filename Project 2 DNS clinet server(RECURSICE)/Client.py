@@ -9,13 +9,8 @@ import sys
 import socket as mysoc
 
 
-class count:
-    counter = 0
-    ctoTS = None
-
-
-inputhostname = ''
-inputtextname = ''
+hostname = ''
+textname = ''
 
 
 def client():
@@ -27,13 +22,13 @@ def client():
 
     # Define the port on which you want to connect to the server
     port = 5004
-    host = mysoc.gethostbyname(inputhostname)
+    host = mysoc.gethostbyname(hostname)
     server_binding = (host, port)
     cs.connect(server_binding)
 
     # send a intro  message to the client.
 
-    with open(inputtextname) as f:
+    with open(textname) as f:
         lines = f.readlines()
     f.close()
 
@@ -59,8 +54,8 @@ def client():
 
 
 if __name__ == "__main__":
-    inputhostname = sys.argv[1]
-    inputtextname = sys.argv[2]
+    hostname = sys.argv[1]
+    textname = sys.argv[2]
 
     t2 = threading.Thread(name='client', target=client)
     t2.start()
