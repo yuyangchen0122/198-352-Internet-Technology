@@ -29,10 +29,10 @@ def client():
     # Define the port on which you want to connect to the server
     port = 5004
     host = mysoc.gethostbyname(inputhostname)
-    sa_sameas_myaddr = mysoc.gethostbyname(host)
+    # sa_sameas_myaddr = mysoc.gethostbyname(host)
     # connect to the server on local machine
 
-    server_binding = (sa_sameas_myaddr, port)
+    server_binding = (host, port)
 
     cs.connect(server_binding)
 
