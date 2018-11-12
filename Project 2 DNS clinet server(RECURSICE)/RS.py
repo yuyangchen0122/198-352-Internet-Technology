@@ -57,7 +57,6 @@ def server():
     server_binding1 = (host1, port_tlds1)
     tlds1.connect(server_binding1)
 
-
     try:
         tlds2 = mysoc.socket(mysoc.AF_INET, mysoc.SOCK_STREAM)
         print("[C]: Connect to TLDS2")
