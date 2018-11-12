@@ -7,7 +7,7 @@ import random
 import socket as mysoc
 import sys
 
-port = 5000
+port = 5001
 
 
 args = sys.argv

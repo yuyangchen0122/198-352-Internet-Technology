@@ -6,10 +6,9 @@ import time
 import socket as mysoc
 import sys
 
-port_tlds1 = 5000
-port_tlds2 = 7777
+port_tlds1 = 5001
+port_tlds2 = 7778
 
-args = sys.argv
 inputtextname = ''
 inputhostname1 = ''
 inputhostname2 = ''
