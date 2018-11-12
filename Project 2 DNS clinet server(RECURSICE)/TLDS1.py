@@ -5,6 +5,13 @@ import threading
 import time
 import random
 import socket as mysoc
+import sys
+
+port = 5000
+
+
+args = sys.argv
+inputhostname1 = args[2]
 
 
 def server1():
@@ -13,13 +20,13 @@ def server1():
         print("[S]: Server socket created")
     except mysoc.error as err:
         print('{} \n'.format("socket open error ", err))
-    server_binding = ('', 50000)
+    server_binding = ('', port)
     tssd1.bind(server_binding)
     tssd1.listen(1)
-    host = mysoc.gethostname()
+    host = mysoc.gethostname(inputhostname1)
     print("[S]: Server host name is: ", host)
-    localhost_ip = (mysoc.gethostbyname(host))
-    print("[S]: Server IP address is  ", localhost_ip)
+    host_ip = (mysoc.gethostbyname(host))
+    print("[S]: Server IP address is  ", host_ip)
     csockid, addr = tssd1.accept()
     print("[S]: Got a connection request from a Root Sever at", addr)
 
@@ -28,26 +35,27 @@ def server1():
     f.close()
 
     while 1:
-        data_from_server = csockid.recv(1024)
+        data_from_server = csockid.recv(100)
         m = data_from_server.decode('utf-8')
         if not data_from_server:
             break
         print("[C]: Data received from Root Server:", m)
-        time.sleep(1)
         temp = 0
         for line in lines:
             if line.startswith(m):
                 print("Hostname IPaddress A: ", line)
-                tssd1.send(line.encode('utf-8'))
-                time.sleep(1)
+                csockid.send(line.encode('utf-8'))
                 temp = 1
                 break
 
         if temp == 0:
-                t = m + ":Hostname - Erros: HOST NOT FOUND" + "\n"
+                t = "Error: HOST NOT FOUND\n"
                 print(t)
                 csockid.send(t.encode('utf-8'))
 
+
+if __name__ == "__main__":
+   sys.argv[2]
 
 t1 = threading.Thread(name='server1', target=server1)
 t1.start()
