@@ -50,7 +50,7 @@ def server():
         print('{} \n'.format("socket open error ", err))
 
     # sa_sameas_myaddr1 = mysoc.gethostbyname()
-    server_binding1 = (mysoc.gethostbyname(mysoc.gethostname()), port_tlds1)
+    server_binding1 = (mysoc.gethostbyname(mysoc.gethostname(inputhostname1)), port_tlds1)
     tlds1.connect(server_binding1)
 
 
@@ -61,7 +61,7 @@ def server():
         print('{} \n'.format("socket open error ", err))
 
     # sa_sameas_myaddr2 = mysoc.gethostbyname("kill.cs.rutgers.edu")
-    server_binding2 = (mysoc.gethostbyname(mysoc.gethostname()), port_tlds2)
+    server_binding2 = (mysoc.gethostbyname(mysoc.gethostname(inputhostname2)), port_tlds2)
     tlds2.connect(server_binding2)
 
     try:
@@ -79,7 +79,7 @@ def server():
     csockid, addr = ss.accept()
     print("[S]: Got a connection request from a client at", addr)
 
-    with open('PROJ2-DNSRS.txt') as f:
+    with open(inputtextname) as f:
         lines = f.readlines()
     f.close()
 
@@ -142,10 +142,14 @@ def server():
 # take user input
 # your code
 
+if __name__ == "__main__":
+    inputhostname1 = sys.argv[1]
+    inputhostname2 = sys.argv[2]
+    inputtextname = sys.argv[3]
 
-t1 = threading.Thread(name='server', target=server)
-t1.start()
+    t1 = threading.Thread(name='server', target=server)
+    t1.start()
 
-input("Hit ENTER  to exit")
+    input("Hit ENTER  to exit")
 
 exit()
