@@ -11,7 +11,7 @@ port = 5000
 
 
 args = sys.argv
-inputhostname1 = args[1]
+inputtextname1 =''
 
 
 def server1():
@@ -23,14 +23,14 @@ def server1():
     server_binding = ('', port)
     tssd1.bind(server_binding)
     tssd1.listen(1)
-    host = mysoc.gethostname(inputhostname1)
-    print("[S]: Server host name is: ", host)
-    host_ip = (mysoc.gethostbyname(host))
-    print("[S]: Server IP address is  ", host_ip)
+    # host = mysoc.gethostname(inputhostname1)
+    # print("[S]: Server host name is: ", host)
+    host_ip = ''
+    # print("[S]: Server IP address is  ", host_ip)
     csockid, addr = tssd1.accept()
-    print("[S]: Got a connection request from a Root Sever at", addr)
+    # print("[S]: Got a connection request from a Root Sever at", addr)
 
-    with open('PROJ2-DNSCOM.txt') as f:
+    with open(inputtextname1) as f:
         lines = f.readlines()
     f.close()
 
@@ -55,10 +55,10 @@ def server1():
 
 
 if __name__ == "__main__":
-   sys.argv[1]
+    inputtextname1 = sys.argv[2]
 
-t1 = threading.Thread(name='server1', target=server1)
-t1.start()
-input("Hit ENTER  to exit")
+    t1 = threading.Thread(name='server1', target=server1)
+    t1.start()
+    input("Hit ENTER  to exit")
 
-exit()
+    exit()

@@ -10,7 +10,7 @@ import sys
 port = 7777
 
 args = sys.argv
-inputhostname2 = args[1]
+inputtextname2 = ''
 
 
 def server2():
@@ -22,14 +22,14 @@ def server2():
     server_binding = ('', port)
     tssd2.bind(server_binding)
     tssd2.listen(1)
-    host = mysoc.gethostname(inputhostname2)
-    print("[S]: Server host name is: ", host)
-    host_ip = (mysoc.gethostbyname(host))
-    print("[S]: Server IP address is  ", host_ip)
+    # host = mysoc.gethostname(inputhostname2)
+    # print("[S]: Server host name is: ", host)
+    host_ip = ''
+    # print("[S]: Server IP address is  ", host_ip)
     csockid, addr = tssd2.accept()
     print("[S]: Got a connection request from a Root Server at", addr)
 
-    with open('PROJ2-DNSEDU.txt') as f:
+    with open(inputtextname2) as f:
         lines = f.readlines()
     f.close()
 
@@ -54,10 +54,10 @@ def server2():
 
 
 if __name__ == "__main__":
-   sys.argv[1]
+    inputtextname2 = sys.argv[2]
 
-t1 = threading.Thread(name='server2', target=server2)
-t1.start()
-input("Hit ENTER  to exit")
+    t1 = threading.Thread(name='server2', target=server2)
+    t1.start()
+    input("Hit ENTER  to exit")
 
 exit()
