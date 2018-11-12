@@ -9,7 +9,6 @@ import sys
 port_tlds1 = 5000
 port_tlds2 = 7777
 
-
 #
 # def connect_to_tlds1():
 #     try:
@@ -149,6 +148,8 @@ if __name__ == "__main__":
     inputhostname1 = sys.argv[1]
     inputhostname2 = sys.argv[2]
     inputtextname = sys.argv[3]
+    print(inputhostname1)
+    print(inputhostname2)
 
     t1 = threading.Thread(name='server', target=server)
     t1.start()
