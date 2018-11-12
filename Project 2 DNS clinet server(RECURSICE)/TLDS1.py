@@ -55,7 +55,7 @@ def server1():
 
 
 if __name__ == "__main__":
-    inputtextname1 = sys.argv[2]
+    inputtextname1 = sys.argv[1]
 
     t1 = threading.Thread(name='server1', target=server1)
     t1.start()
