@@ -49,8 +49,8 @@ def server():
         print('{} \n'.format("socket open error ", err))
 
     # sa_sameas_myaddr1 = mysoc.gethostbyname()
-    host1 = mysoc.gethostname(inputhostname1)
-    server_binding1 = (mysoc.gethostbyname(host1), port_tlds1)
+    host1 = mysoc.gethostbyname(inputhostname1)
+    server_binding1 = (host1, port_tlds1)
     tlds1.connect(server_binding1)
 
 
@@ -61,8 +61,8 @@ def server():
         print('{} \n'.format("socket open error ", err))
 
     # sa_sameas_myaddr2 = mysoc.gethostbyname("kill.cs.rutgers.edu")
-    host2 = mysoc.gethostname(inputhostname2)
-    server_binding2 = (mysoc.gethostbyname(host2), port_tlds2)
+    host2 = mysoc.gethostbyname(inputhostname2)
+    server_binding2 = (host2, port_tlds2)
     tlds2.connect(server_binding2)
 
     try:
@@ -148,8 +148,6 @@ if __name__ == "__main__":
     inputhostname1 = sys.argv[1]
     inputhostname2 = sys.argv[2]
     inputtextname = sys.argv[3]
-    print(inputhostname1)
-    print(inputhostname2)
 
     t1 = threading.Thread(name='server', target=server)
     t1.start()
