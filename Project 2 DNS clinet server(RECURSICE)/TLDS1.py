@@ -10,7 +10,6 @@ import sys
 port = 5002
 
 
-args = sys.argv
 inputtextname1 =''
 
 

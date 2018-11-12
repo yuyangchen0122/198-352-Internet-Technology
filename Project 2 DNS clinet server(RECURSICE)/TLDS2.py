@@ -9,7 +9,6 @@ import sys
 
 port = 7779
 
-args = sys.argv
 inputtextname2 = ''
 
 
