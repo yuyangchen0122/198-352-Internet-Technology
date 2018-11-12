@@ -4,6 +4,7 @@
 import threading
 import time
 import random
+import sys
 
 import socket as mysoc
 
@@ -11,6 +12,11 @@ import socket as mysoc
 class count:
     counter = 0
     ctoTS = None
+
+
+args = sys.argv
+inputhostname = ''
+inputtextname = ''
 
 
 def client():
@@ -56,8 +62,12 @@ def client():
     exit()
 
 
-t2 = threading.Thread(name='client', target=client)
-t2.start()
-input("Hit ENTER  to exit")
+if __name__ == "__main__":
+    inputhostname = sys.argv[1]
+    inputtextname = sys.argv[2]
+
+    t2 = threading.Thread(name='client', target=client)
+    t2.start()
+    input("Hit ENTER  to exit")
 
 exit()
