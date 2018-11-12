@@ -11,7 +11,7 @@ port = 5000
 
 
 args = sys.argv
-inputhostname1 = args[2]
+inputhostname1 = args[1]
 
 
 def server1():
@@ -55,7 +55,7 @@ def server1():
 
 
 if __name__ == "__main__":
-   sys.argv[2]
+   sys.argv[1]
 
 t1 = threading.Thread(name='server1', target=server1)
 t1.start()

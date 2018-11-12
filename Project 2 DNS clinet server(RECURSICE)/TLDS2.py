@@ -10,7 +10,7 @@ import sys
 port = 7777
 
 args = sys.argv
-inputhostname2 = args[2]
+inputhostname2 = args[1]
 
 
 def server2():
@@ -54,7 +54,7 @@ def server2():
 
 
 if __name__ == "__main__":
-   sys.argv[2]
+   sys.argv[1]
 
 t1 = threading.Thread(name='server2', target=server2)
 t1.start()
