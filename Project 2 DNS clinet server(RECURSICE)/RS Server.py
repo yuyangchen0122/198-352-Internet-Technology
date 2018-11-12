@@ -9,6 +9,10 @@ import sys
 port_tlds1 = 5000
 port_tlds2 = 7777
 
+args = sys.argv
+inputtextname = ''
+inputhostname1 = ''
+inputhostname2 = ''
 #
 # def connect_to_tlds1():
 #     try:
