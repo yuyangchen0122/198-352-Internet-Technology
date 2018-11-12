@@ -6,8 +6,8 @@ import time
 import socket as mysoc
 import sys
 
-port_tlds1 = 5001
-port_tlds2 = 7778
+port_tlds1 = 5002
+port_tlds2 = 7779
 
 inputtextname = ''
 inputhostname1 = ''
@@ -72,7 +72,7 @@ def server():
         print("[S]: Server socket created")
     except mysoc.error as err:
         print('{} \n'.format("socket open error ", err))
-    server_binding = ('', 5004)
+    server_binding = ('', 5005)
     ss.bind(server_binding)
     ss.listen(1)
     host = mysoc.gethostname()

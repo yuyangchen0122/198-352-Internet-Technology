@@ -21,7 +21,7 @@ def client():
         print('{} \n'.format("socket open error ", err))
 
     # Define the port on which you want to connect to the server
-    port = 5004
+    port = 5005
     host = mysoc.gethostbyname(hostname)
     server_binding = (host, port)
     cs.connect(server_binding)

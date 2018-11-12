@@ -7,7 +7,7 @@ import random
 import socket as mysoc
 import sys
 
-port = 7778
+port = 7779
 
 args = sys.argv
 inputtextname2 = ''
