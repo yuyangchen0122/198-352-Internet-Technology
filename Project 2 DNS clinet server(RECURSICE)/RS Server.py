@@ -145,9 +145,9 @@ def server():
 
 
 if __name__ == "__main__":
-    inputhostname1 = sys.argv[2]
-    inputhostname2 = sys.argv[3]
-    inputtextname = sys.argv[4]
+    inputhostname1 = sys.argv[1]
+    inputhostname2 = sys.argv[2]
+    inputtextname = sys.argv[3]
 
     t1 = threading.Thread(name='server', target=server)
     t1.start()
