@@ -14,7 +14,6 @@ class count:
     ctoTS = None
 
 
-args = sys.argv
 inputhostname = ''
 inputtextname = ''
 
@@ -31,9 +30,7 @@ def client():
     host = mysoc.gethostbyname(inputhostname)
     # sa_sameas_myaddr = mysoc.gethostbyname(host)
     # connect to the server on local machine
-
     server_binding = (host, port)
-
     cs.connect(server_binding)
 
     # send a intro  message to the client.
