@@ -11,11 +11,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Client.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Client.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Client.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="110">
-              <caret line="29" column="54" selection-start-line="29" selection-start-column="36" selection-end-line="29" selection-end-column="54" />
+            <state relative-caret-position="234">
+              <caret line="80" column="36" selection-start-line="80" selection-start-column="36" selection-end-line="80" selection-end-column="36" />
               <folding>
                 <element signature="e#0#22#0" expanded="true" />
               </folding>
@@ -23,11 +23,16 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="RESOLVED.txt" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/RESOLVED.txt">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
       <file leaf-file-name="AS.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/AS.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="45" column="56" selection-start-line="45" selection-start-column="56" selection-end-line="45" selection-end-column="56" />
+            <state relative-caret-position="272">
+              <caret line="47" selection-start-line="47" selection-end-line="48" selection-end-column="34" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
               </folding>
@@ -38,8 +43,8 @@
       <file leaf-file-name="TLDS1.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/TLDS1.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="203">
-              <caret line="21" column="52" selection-start-line="21" selection-start-column="40" selection-end-line="21" selection-end-column="52" />
+            <state relative-caret-position="-152">
+              <caret line="36" column="40" lean-forward="true" selection-start-line="36" selection-start-column="40" selection-end-line="36" selection-end-column="40" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
               </folding>
@@ -120,6 +125,7 @@
         <option value="$PROJECT_DIR$/TLDS1.py" />
         <option value="$PROJECT_DIR$/AS.py" />
         <option value="$PROJECT_DIR$/Client.py" />
+        <option value="$PROJECT_DIR$/RESOLVED.txt" />
       </list>
     </option>
   </component>
@@ -287,14 +293,14 @@
     <frame x="0" y="23" width="1280" height="724" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.8133971" visible="true" weight="0.2494043" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.81042653" visible="true" weight="0.2494043" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32854864" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Python Console" order="7" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32695374" />
-      <window_info id="Structure" order="1" sideWeight="0.18660288" side_tool="true" weight="0.2494043" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32695374" />
+      <window_info id="Structure" order="1" sideWeight="0.18957347" side_tool="true" visible="true" weight="0.2494043" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39872408" />
@@ -636,9 +642,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/RESOLVED.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/PROJ3-TLDS2.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -670,13 +673,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/threading.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="124">
-          <caret line="915" selection-start-line="915" selection-end-line="915" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/TLDS2.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="114">
@@ -689,8 +685,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/TLDS1.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="21" column="52" selection-start-line="21" selection-start-column="40" selection-end-line="21" selection-end-column="52" />
+        <state relative-caret-position="-152">
+          <caret line="36" column="40" lean-forward="true" selection-start-line="36" selection-start-column="40" selection-end-line="36" selection-end-column="40" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>
@@ -699,23 +695,33 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/AS.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="45" column="56" selection-start-line="45" selection-start-column="56" selection-end-line="45" selection-end-column="56" />
+        <state relative-caret-position="272">
+          <caret line="47" selection-start-line="47" selection-end-line="48" selection-end-column="34" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/threading.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="124">
+          <caret line="863" selection-start-line="863" selection-end-line="863" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Client.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="29" column="54" selection-start-line="29" selection-start-column="36" selection-end-line="29" selection-end-column="54" />
+        <state relative-caret-position="234">
+          <caret line="80" column="36" selection-start-line="80" selection-start-column="36" selection-end-line="80" selection-end-column="36" />
           <folding>
             <element signature="e#0#22#0" expanded="true" />
           </folding>
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RESOLVED.txt">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
 </project>

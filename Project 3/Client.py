@@ -28,7 +28,8 @@ def client():
 
     port_tlds1 = 8001
     tlds1_ip = mysoc.gethostbyname("cpp.cs.rutgers.edu")
-    tlds1.connect((tlds1_ip, port_tlds1))
+    server_binding1 = (tlds1_ip,port_tlds1)
+    tlds1.connect(server_binding1)
     time.sleep(1)
 
     try:
@@ -40,7 +41,8 @@ def client():
 
     port_tlds2 = 9001
     tlds2_ip = mysoc.gethostbyname("java.cs.rutgers.edu")
-    tlds2.connect((tlds2_ip, port_tlds2))
+    server_binding2 = (tlds2_ip,port_tlds2)
+    tlds2.connect(server_binding2)
     time.sleep(1)
 
     with open('PROJ3-HNS.txt') as f:
@@ -69,12 +71,14 @@ def client():
             data_from_tlds1 = tlds1.recv(1024)
             name1 = data_from_tlds1.decode('utf-8')
             print("TLDS1" + " " + name1)
+            output_file.write("TLDS1" + " " + name1)
         elif(servername.strip() == "TLDS2"):
             tlds2.send(hnshostname.strip().encode('utf-8'))
             tlds1.send("xxxx".encode('utf-8'))
             data_from_tlds2 = tlds2.recv(1024)
             name2 = data_from_tlds2.decode('utf-8')
             print("TLDS2" + " " + name2)
+            output_file.write("TLDS2" + " " + name1)
 
     rs_socket.send('disconnecting'.encode('utf-8'))
     tlds1.close()

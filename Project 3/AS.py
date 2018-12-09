@@ -39,13 +39,14 @@ def server():
     # Define the port on which you want to connect to the com server
     tlds1_port = 8887
     tlds1_ip = mysoc.gethostbyname("cpp.cs.rutgers.edu")
-    tlds1.connect((tlds1_ip, tlds1_port))
+    server_binding1 = (tlds1_ip,tlds1_port)
+    tlds1.connect(server_binding1)
 
     # Define the port on which you want to connect to edu the server
     tlds2_port = 8890
     tlds2_ip = mysoc.gethostbyname("java.cs.rutgers.edu")
-
-    tlds2.connect((tlds2_ip, tlds2_port))
+    server_binding2 = (tlds2_ip,tlds2_port)
+    tlds2.connect(server_binding2)
 
 
 # loop which receives data from the client

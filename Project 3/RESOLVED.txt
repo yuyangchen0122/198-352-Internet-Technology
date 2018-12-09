@@ -1,0 +1,4 @@
+TLDS1 Error: HOST NOT FOUND
+TLDS2 Error: HOST NOT FOUND
+TLDS2 Error: HOST NOT FOUND
+TLDS1 www.google.com  8.6.4.2 A
