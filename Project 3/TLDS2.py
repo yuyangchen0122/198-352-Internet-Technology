@@ -30,7 +30,7 @@ def server():
         print("[S]: Server socket created")
     except mysoc.error as err:
         print('{} \n'.format("socket open error ",err))
-    server_binding = ('', 9001)
+    server_binding = ('', 9002)
     # Set up socket
     tlds2client.bind(server_binding)
     tlds2client.listen(1)

@@ -26,7 +26,7 @@ def client():
     except mysoc.error as err:
         print('{} \n'.format("socket open error ", err))
 
-    port_tlds1 = 8001
+    port_tlds1 = 8002
     tlds1_ip = mysoc.gethostbyname("cpp.cs.rutgers.edu")
     server_binding1 = (tlds1_ip,port_tlds1)
     tlds1.connect(server_binding1)
@@ -39,7 +39,7 @@ def client():
     except mysoc.error as err:
         print('{} \n'.format("socket open error ", err))
 
-    port_tlds2 = 9001
+    port_tlds2 = 9002
     tlds2_ip = mysoc.gethostbyname("java.cs.rutgers.edu")
     server_binding2 = (tlds2_ip,port_tlds2)
     tlds2.connect(server_binding2)

@@ -29,7 +29,7 @@ def server():
         print("[S]: Server socket created")
     except mysoc.error as err:
         print('{} \n'.format("socket open error ",err))
-    server_binding = ('', 8001) # Set up socket
+    server_binding = ('', 8002) # Set up socket
     tlds1client.bind(server_binding)
     tlds1client.listen(1)
     host = mysoc.gethostname()
