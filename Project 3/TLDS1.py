@@ -13,7 +13,7 @@ def server():
         print("[S]: Server socket created")
     except mysoc.error as err:
         print('{} \n'.format("socket open error ",err))
-    server_binding=('',8887) # Set up socket
+    server_binding=('',8888) # Set up socket
     ss.bind(server_binding)
     ss.listen(1)
     host = mysoc.gethostname()
